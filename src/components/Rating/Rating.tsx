@@ -6,7 +6,6 @@ type TypeRatingProps = {
 }
 
 export const Rating = (props: TypeRatingProps) => {
-
         return (
             <div>
                 <Star selected={(props.value > 0)}/>
@@ -14,6 +13,7 @@ export const Rating = (props: TypeRatingProps) => {
                 <Star selected={(props.value > 2)}/>
                 <Star selected={(props.value > 3)}/>
                 <Star selected={(props.value > 4)}/>
+                <Star selected={(props.value > 5)}/>
             </div>
         )
     }
