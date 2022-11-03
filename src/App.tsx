@@ -16,7 +16,6 @@ function App() {
             <OnOff/>
             <OnOff/>
             <OnOff/>
-            <OnOff/>
             <UnControlledAccordion titleValue={'menu'}/>
             <UnControlledRating/>
             {/*<OnOff on={false}/>*/}
