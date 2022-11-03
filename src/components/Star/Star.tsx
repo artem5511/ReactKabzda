@@ -1,5 +1,4 @@
 import React from "react";
-import exp from 'constants';
 import {RaitingValueType} from '../Rating/Rating';
 
 type PropsType = {
@@ -8,16 +7,14 @@ type PropsType = {
     onClick: (value: RaitingValueType)=> void
 }
 
-export function Star (props:PropsType) {
+export const Star = (props: PropsType) => {
     return <span onClick={()=>{props.onClick(props.value)}}>
-        {props.selected ? <b>star</b> : "star"}
-    </span>
+    {props.selected ? <b>star</b> : 'star'}
 
+    </span>
 }
 
-// export const Star = (props: PropsType) => props.selected ? <b>star</b> : "star"
-
-//
+// export const Star = (props: PropsType) => {
 //     if (props.selected === true) {
 //         return <span><b>Star</b></span>
 //         } else {
