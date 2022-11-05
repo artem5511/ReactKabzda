@@ -3,18 +3,26 @@ import {AccordionTitle} from "./AccordionTitle";
 import {AccordionBody} from "./AccordionBody";
 
 type PropsType = {
-    titleValue: string
     collapsed: boolean
+    titleValue: string
+    onChange: () => void
+
 }
 
 export const Accordion = (props: PropsType) => {
-return (
-    <div>
-        <AccordionTitle title={props.titleValue}/>
-        {!props.collapsed && <AccordionBody/>}
-    </div>
-)
+    return (
+        <div>
+            <AccordionTitle
+                title={props.titleValue}
+                            onChange={props.onChange}/>
+            {!props.collapsed && <AccordionBody/>}
+        </div>
+    )
 }
+
+
+// <AccordionTitle title={props.titleValue}/>
+// {!props.collapsed && <AccordionBody/>}
 
 // export const Accordion2 = (props: PropsType) => {
 //     if (props.collapsed === true) {
