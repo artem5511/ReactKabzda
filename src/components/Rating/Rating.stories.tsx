@@ -8,7 +8,7 @@ export default {
     title: 'Example/Rating',
     component: Rating,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    };
+};
 
 export const EmptyStars = () => <Rating value={0} onClick={x=>x}/>
 export const Rating1 = () => <Rating value={1} onClick={x=>x}/>
