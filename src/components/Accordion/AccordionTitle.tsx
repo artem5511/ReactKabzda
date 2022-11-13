@@ -7,7 +7,7 @@ type PropsType ={
 export const AccordionTitle = (props: PropsType) => {
     return (
         <div>
-            <h2 onClick={props.onChange}> ---{props.title}---</h2>
+            <h2 onClick={(e) => props.onChange()}> ---{props.title}---</h2>
         </div>
     )
 }
