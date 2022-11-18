@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
+import {action, actions} from '@storybook/addon-actions';
 
 export default {
   title: 'input',
@@ -30,5 +31,37 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
 
   return <><input ref={inputRef} id={'inputId'}/> <button onClick={save}>save</button> - actual value: {value}</>
 };
+
+export const ControlledInput = () => {
+  const [parentValue, setParentValue] = useState('');
+  const onChange =(e: ChangeEvent<HTMLInputElement>)=> {
+    setParentValue(e.currentTarget.value);
+  }
+
+  return <input value={parentValue} onChange={onChange}/>;
+}
+
+export const ControlledCheckbox = () => {
+  const [parentValue, setParentValue] = useState(true);
+  const onChange =(e: ChangeEvent<HTMLInputElement>)=> {
+    setParentValue(e.currentTarget.checked);
+  }
+
+  return <input type={'checkbox'} checked={parentValue} onChange={onChange}/>;
+}
+
+export const ControlledSelect= () => {
+  const [parentValue, setParentValue] = useState<string | undefined>(undefined);
+
+  const onChange =(e: ChangeEvent<HTMLInputElement>) => {
+    // setParentValue(e.currentTarget.checked);
+  }
+  return  <select value={parentValue}>
+    <option>none</option>
+    <option value={'1'}>Minsk</option>
+    <option value={'2'}>Kiev</option>
+    <option value={'3'}>Moscow</option>
+    </select>;
+}
 
 export const ControlledInputWithFixedValue = () => <input value={'it-incubator.by'}/>
