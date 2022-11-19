@@ -54,7 +54,7 @@ export const ControlledSelect= () => {
   const [parentValue, setParentValue] = useState<string | undefined>(undefined);
 
   const onChange =(e: ChangeEvent<HTMLInputElement>) => {
-    // setParentValue(e.currentTarget.checked);
+    setParentValue(e.currentTarget.value);
   }
   return  <select value={parentValue}>
     <option>none</option>
