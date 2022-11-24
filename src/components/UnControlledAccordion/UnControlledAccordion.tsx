@@ -1,18 +1,23 @@
 import React, {useState} from "react";
-import {AccordionBody} from "../Accordion/AccordionBody";
+import {AccordionBody, PropsTypeBody} from "../Accordion/AccordionBody";
 
 type PropsType = {
     titleValue: string
     // collapsed: boolean
 }
 
-export const UnControlledAccordion = (props: PropsType) => {
+type PropsTypeAll = {
+    PropsType: PropsType
+    PropsTypeBody: PropsTypeBody
+}
+
+export const UnControlledAccordion = (props: PropsTypeAll) => {
 
     let [collapsed, setCollapsed] = useState(false)
 return (
     <div>
-        <AccordionTitle title={props.titleValue} onClick={()=>{setCollapsed(!collapsed)}}/>
-        {!collapsed && <AccordionBody/>}
+        <AccordionTitle title={props.PropsType.titleValue} onClick={()=>{setCollapsed(!collapsed)}}/>
+        {!collapsed && <AccordionBody items={props.PropsTypeBody.items} onClick={props.PropsTypeBody.onClick}/>}
     </div>
 )
 }

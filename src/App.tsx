@@ -19,7 +19,7 @@ function App() {
             <OnOff on={switchOn} onChange={setSwitchOn}/>
             <UncontrolledOnOff onChange={setSwitchOn}/>
             {/*<OnOff/>*/}
-            <UnControlledAccordion titleValue={'menu'}/>
+            {/*<UnControlledAccordion titleValue={'menu'}/>*/}
             <UnControlledRating/>
             {/*<OnOff on={false}/>*/}
             {/*<OnOff on={true}/>*/}

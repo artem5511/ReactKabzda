@@ -7,11 +7,24 @@ export default {
     component: Select,
 };
 
-export const ModeChanging = () => <Select onChange={action("poopopo")}
-     value={'1'}
-       items={[
-           {title: 'Minsk', value: 1},
-            {title: 'Kiev', value: 2},
-           {title: 'Moscow', value: 3},
-       ]}
-/>;
+export const WithValue = () =>
+    <>
+        <Select onChange={action("Value changed")}
+                value={2}
+                items={[
+                    {title: 'Minsk', value: 1},
+                    {title: 'Kiev', value: 2},
+                    {title: 'Moscow', value: 3},
+                ]}/>
+    </>
+
+export const WithoutValue = () =>
+    <>
+        <Select onChange={action("Value changed")}
+                value={''}
+                items={[
+                    {title: 'Minsk', value: 1},
+                    {title: 'Kiev', value: 2},
+                    {title: 'Moscow', value: 3},
+                ]}/>
+    </>
